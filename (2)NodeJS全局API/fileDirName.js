@@ -8,6 +8,7 @@ var server=http.createServer(function(req,res){
     htmlContent=htmlContent.toString("utf8");
     res.writeHead(200,{"Content-Type":"text/html"});
     res.write(htmlContent);
+    console.log(htmlPath);
     res.end();
 });
 server.listen(8080);
