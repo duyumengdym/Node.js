@@ -7,6 +7,10 @@ console.log(message[0]+":");
 process.stdin.on("data",function(data){
     obj[message[i-1]]=data.toString("utf8");
     if(i==3){
+        var file2=obj[message[i-1]];
+        var filePath=path.join(__dirname,"/"+obj[message[i-3]].split(" ")[1].slice(0,-2)+"/"+file2.slice(0,-2));
+        fs.unlinkSync(filePath);
+        console.log("文件删除成功");
         console.log(obj);
         process.exit();
     }else if(i==1){
@@ -17,7 +21,8 @@ process.stdin.on("data",function(data){
         console.log(message[i++]+":");
     }else if(i==2){
         var file2=obj[message[i-1]].split(" ");
-        fs.mkdirSync("/"+obj[message[i-2]].split(" ")[1].slice(0,-2)+"/"+file2[1].slice(0,-2));
+        var filePath=path.join(__dirname,"/"+obj[message[i-2]].split(" ")[1].slice(0,-2)+"/"+file2[1].slice(0,-2));
+        fs.writeFileSync(filePath,"hello node");
         console.log("文件创建成功");
         console.log(message[i++]+":");
     }
