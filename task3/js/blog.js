@@ -38,7 +38,7 @@ http.createServer(function (req,res) {
         showJs(res,pathName);
     }
 }).listen(8083);
-console.log("server is listening 8081");
+console.log("server is listening 8083");
 function showHtml(res,filePath) {
     var indexPath=path.join(__dirname,"../"+filePath);
     var fileContent=fs.readFileSync(indexPath);
@@ -73,7 +73,7 @@ function checkPwd(req,res) {
         dataStr += chunk;
     })  
     req.on("end",function(){
-        console.log(dataStr);
+        // console.log(dataStr);
         var userList = [
             {username: "admin", pwd: "admin"}
         ]
