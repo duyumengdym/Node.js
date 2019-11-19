@@ -1,0 +1,17 @@
+1、页面呈现
+访问特定的资源路径显示对应的页面
+
+页面
+2、博客列表
+数据从服务端获取
+先呈现出页面 再通过jquery ajax从服务端获取数据
+$get("",funtion(data)){
+    
+}
+3、http://localhost/8081/detail？chapterID=
+资源路径是detail的时候服务端读取数据返回到客户端去
+
+4.内容详情页得到id值获取文章详细信息
+$get("",funtion(data)){
+    
+}
